@@ -1,0 +1,15 @@
+labels:
+  env: dev
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/jumic/helm-julian-nginx
+    targetRevision: main
+
+  # Thoses default values can be surcharged by Infrastructure as Code
+  env: dev
+  clusterName: eks-blueprint-cluster-julian # the name of EKS cluster
+  ingress:
+    type: 'alb' # nginx | alb
+    host: # empty or your domain like dev.example.com
